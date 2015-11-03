@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ludimila/TrabalhoDAS.png?label=ready&title=Ready)](https://waffle.io/ludimila/TrabalhoDAS)
 # TrabalhoDAS
 Trabalho final para disciplina Desenvolvimento avançado de software.
 
