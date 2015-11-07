@@ -1,12 +1,7 @@
 # Be sure to restart your server when you modify this file.
 
-# Your secret key is used for verifying the integrity of signed cookies.
+# Your secret key for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
-
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-# You can use `rake secret` to generate a secure secret key.
-
-# Make sure your secret_key_base is kept private
-# if you're sharing your code publicly.
-Sharepet::Application.config.secret_key_base = '31524f6aa24714d11b2096820033776d22f67ac81859185ee8e75a8f8e4c3ac109e202e225bab2732af0b30114a2f3ed38cefd455da093fcb52bfcf442e762b6'
+Sharepet::Application.config.secret_token = 'ee1f76f7c60e3f906059e3ce89a75520e11f98f549a3f30ee56acd9e9bbe36583f81723c7cc4922eef0be7a275018bbe8f981e566def9fa9562c12ef978e1a51'
