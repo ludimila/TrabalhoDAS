@@ -63,6 +63,8 @@ GEM
     multi_json (1.11.2)
     pg (0.18.3)
     polyglot (0.3.5)
+    postgresql (1.0.0)
+      pg
     rack (1.4.7)
     rack-cache (1.5.1)
       rack (>= 0.4)
@@ -99,7 +101,6 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.11)
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
@@ -122,8 +123,8 @@ DEPENDENCIES
   haml
   jquery-rails
   pg
+  postgresql
   rails (= 3.2.18)
   sass-rails
-  sqlite3
   therubyracer
   uglifier
