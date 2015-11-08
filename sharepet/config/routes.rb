@@ -1,4 +1,7 @@
 Sharepet::Application.routes.draw do
+  resources :animals
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
