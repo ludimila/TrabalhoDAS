@@ -1,0 +1,26 @@
+{
+  "name": "sharepet",
+  "homepage": "https://github.com/ludimila/TrabalhoDAS",
+  "authors": [
+    "Luiz Oliveira <ziuloliveira@gmail.com>"
+  ],
+  "description": "Share a Pet!",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "pet",
+    "rails"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#~0.97.1"
+  }
+}
