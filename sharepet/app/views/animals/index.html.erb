@@ -1,9 +1,9 @@
-<h1>Listing animals</h1>
+<h1>Pets Availables</h1>
 
 <table>
   <tr>
     <th>Name</th>
-    <th>Animaltype</th>
+    <!-- <th>Animaltype</th> -->
     <th>Breed</th>
     <th>Age</th>
     <th></th>
@@ -13,13 +13,14 @@
 
 <% @animals.each do |animal| %>
   <tr>
-    <td><%= animal.name %></td>
-    <td><%= animal.animalType %></td>
+    <!-- <td><%= animal.name %></td> -->
+    <td><%= link_to animal.name, animal %></td>
+    <!-- <td><%= animal.animalType %></td> -->
     <td><%= animal.breed %></td>
     <td><%= animal.age %></td>
-    <td><%= link_to 'Show', animal %></td>
-    <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
-    <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <!-- <td><%= link_to 'Show', animal %></td> -->
+    <!-- <td><%= link_to 'Edit', edit_animal_path(animal) %></td> -->
+    <!-- <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
   </tr>
 <% end %>
 </table>
