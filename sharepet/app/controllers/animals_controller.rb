@@ -1,6 +1,7 @@
 class AnimalsController < ApplicationController
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
+
   has_scope :by_breed
   has_scope :only_available, :type => :boolean, allow_blank: false
   # GET /animals
