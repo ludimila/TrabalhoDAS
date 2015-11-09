@@ -1,3 +1,21 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+nav ul a, nav .brand-logo {
+    color: #FFF;
+}
+
+.row .col.s12 {
+    width: 100%;
+    margin-left: 0px;
+    color: #8D1717;
+}
+
+.teal-text.text-lighten-2 {
+    color: #BD6852 !important;
+}
+
+.teal.lighten-1 {
+    background-color: orange !important;
+}
