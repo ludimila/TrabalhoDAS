@@ -11,6 +11,14 @@ class AnimalsController < ApplicationController
     @filtered = apply_scopes(Animal).all.sort_by{|e| e[:name]}
     @available = @filtered.find_all { |animal| animal.adopted == true }
 
+<<<<<<< HEAD
+=======
+    @filtered = apply_scopes(Animal).all
+    animals_scope = Animal.unscoped
+    animals_scope = animals_scope.like(params[:filter]) if params[:filter]
+  
+
+>>>>>>> Smart Listing
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @filtered }
