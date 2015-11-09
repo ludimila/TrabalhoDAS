@@ -3,6 +3,7 @@ class AnimalsController < ApplicationController
   helper  SmartListing::Helper
   has_scope :by_breed
   has_scope :only_available, :type => :boolean, allow_blank: false
+
   # GET /animals
   # GET /animals.json
   def index(filter=nil)
@@ -15,9 +16,6 @@ class AnimalsController < ApplicationController
     # filtering_params(params).each do |key, value|
     #   @filtered = @filtered.public_send(key, value) if value.present?
     # end
-    @filtered = apply_scopes(Animal).all.sort_by{|e| e[:name]}
-
-
 
     respond_to do |format|
       format.html # index.html.erb
