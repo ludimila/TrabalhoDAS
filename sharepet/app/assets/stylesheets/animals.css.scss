@@ -10,3 +10,19 @@ textarea {
 .input-field [type="number"]{
     width: 7%;
 }
+
+.card {
+    position: relative;
+    overflow: hidden;
+    margin: 0.5rem 0px 1rem;
+    background-color: #FFF;
+    transition: box-shadow 0.25s ease 0s;
+    border-radius: 12px;
+    width: 50%;
+}
+
+h1 {
+    font-size: 5.2rem;
+    line-height: 100%;
+    margin: 2rem 12px 12px 12px;
+}

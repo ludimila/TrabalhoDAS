@@ -1,8 +1,8 @@
 <div class="center">
 <h1>Pets Availables</h1>
 </div>
+<ul class="collection">
 <% @animals.each do |animal| %>
-  <ul class="collection">
     <li class="collection-item avatar">
       <img src="/assets/dog.jpeg" alt="" class="circle">
       <span class="title"><%= link_to animal.name, animal %></span>
@@ -12,9 +12,9 @@
       </p>
       <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
     </li>
-  </ul>
 <% end %>
+</ul>
 
 <div class="center">
-  <a href='animals/new'id="download-button" class="btn waves-effect waves-orange teal lighten-1">Share One!</a>
+  <a href='/animals/new'id="download-button" class="btn waves-effect waves-orange teal lighten-1">Share One!</a>
 </div>
