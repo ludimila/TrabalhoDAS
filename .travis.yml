@@ -1,0 +1,28 @@
+# -----------------------------------------------------------------------------
+# Configuration file for http://travis-ci.org/elasticsearch/elasticsearch-rails
+# -----------------------------------------------------------------------------
+
+language: ruby
+sudo: false
+rvm:
+  - 1.9.3
+
+before_install:
+  - gem install bundler
+  - cd $TRAVIS_BUILD_DIR/sharepet
+
+install: bundle update
+
+before_script:
+  - echo $PWD
+  # - bundle clean
+  - bundle install
+
+script: 'ci/travis.rb'
+
+cache: bundler
+
+bundler_args: --without test --jobs 3 --retry 3
+
+addons:
+  postgresql: "9.3"
