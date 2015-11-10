@@ -9,6 +9,7 @@ rvm:
 
 before_install:
   - gem install bundler
+  - psql -c 'create database travis_ci_test;' -U postgres
   - cd $TRAVIS_BUILD_DIR/sharepet
 
 install: bundle update
