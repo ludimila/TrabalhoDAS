@@ -18,7 +18,8 @@ before_script:
   # - bundle clean
   - bundle install
 
-script: 'ci/travis.rb'
+script:
+  - rake test
 
 cache: bundler
 
