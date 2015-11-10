@@ -20,6 +20,7 @@ before_script:
   - bundle install
 
 script:
+  - rake db:migrate
   - rake test
 
 cache: bundler
