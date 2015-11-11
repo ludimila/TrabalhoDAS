@@ -1,12 +1,17 @@
 class AnimalsController < ApplicationController
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
+  has_scope :by_breed
   # GET /animals
   # GET /animals.json
   def index(filter=nil)
     @animals = Animal.all.sort_by{|e| e[:name]}
-    animals_scope = Animal.unscoped
-    animals_scope = animals_scope.like(params[:filter]) if params[:filter]
+    # @filtered = Animal.where(nil)
+    # filtering_params(params).each do |key, value|
+    #   @filtered = @filtered.public_send(key, value) if value.present?
+    # end
+    @filtered = apply_scopes(Animal).all
+
     # @animals = @animals.find_all { |post| post.name == 'Batatinha' }
     # @animals = @animals.find_all { |post| post.name == params[:filter] }
 
@@ -86,4 +91,12 @@ class AnimalsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  # A list of the param names that can be used for filtering the Product list
+  def filtering_params(params)
+    params.slice(:status, :location, :starts_with)
+  end
+
 end

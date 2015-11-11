@@ -2,7 +2,7 @@
 <h1>Pets Availables</h1>
 </div>
 <ul class="collection">
-<% @animals.each do |animal| %>
+<% @filtered.each do |animal| %>
     <li class="collection-item avatar">
       <img src="/assets/dog.jpeg" alt="" class="circle">
       <span class="title"><%= link_to animal.name, animal %></span>
