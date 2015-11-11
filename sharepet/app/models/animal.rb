@@ -1,4 +1,5 @@
 class Animal < ActiveRecord::Base
+<<<<<<< HEAD
   attr_accessible :age, :animalType, :breed, :name, :adopted, :attachment
   # scope :by_breed, -> breed { where( :breed => breed) }
   mount_uploader :attachment, AttachmentUploader # Tells rails to use this uploader
