@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :zip_code
       t.string :address
 
-      t.timestamps
+      t.timestamps null:false
     end
   end
 end
