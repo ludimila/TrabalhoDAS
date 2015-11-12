@@ -6,13 +6,8 @@ gem 'rails', '3.2.18'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-<<<<<<< HEAD
 gem 'coveralls', require: false
 gem 'bcrypt', '3.1.7'
-=======
-gem 'bcrypt', '3.1.7'
-
->>>>>>> scaffolding user
 
 # Gems used only for assets and not required
 # in production environments by default.
