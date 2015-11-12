@@ -6,4 +6,9 @@ class ReportMailer < ActionMailer::Base
   	mail(:to=> "user_email@example.com", :subject=>"Thanks for sharing a pet!")
   end
 
+  def wellcomeMail(user)
+  	@user = user
+  	mail(:to=> user.mail, :subject=>"Wellcome to SharePet!")
+  end
+  
 end
