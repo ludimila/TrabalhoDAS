@@ -118,3 +118,5 @@ Session.vim
 .netrwhist
 *~
 
+### OSX ###
+.DS_Store
