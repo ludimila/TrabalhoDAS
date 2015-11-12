@@ -60,6 +60,7 @@ class AnimalsController < ApplicationController
         # Tell the ReportMailer to send a report email after save
         ReportMailer.sharingPetMail(@animal).deliver
         format.html { redirect_to @animal, notice: 'Pet was successfully created.' }
+        
         format.json { render json: @animal, status: :created, location: @animal }
       else
         format.html { render action: "new" }
