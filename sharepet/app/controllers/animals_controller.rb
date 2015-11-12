@@ -2,11 +2,11 @@ class AnimalsController < ApplicationController
   # GET /animals
   # GET /animals.json
   def index
-    @animals = Animal.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @animals }
+if params[:search].present?
+    @animals = Animal.near(params[:search], 50, :order => :distance)
+else
+    @animals = Animal.all
     end
   end
 
