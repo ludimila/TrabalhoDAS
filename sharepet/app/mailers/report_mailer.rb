@@ -10,5 +10,5 @@ class ReportMailer < ActionMailer::Base
   	@user = user
   	mail(:to=> user.mail, :subject=>"Wellcome to SharePet!")
   end
-  
+
 end
