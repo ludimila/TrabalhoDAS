@@ -8,6 +8,6 @@ class AnimalTest < ActiveSupport::TestCase
 
   test "animals shows" do
   	animal = Animal.all[0]
-  	assert_equal(animal.name,"Bacon")
+  	assert_equal(animal.name,"Toicinho")
   end
 end
