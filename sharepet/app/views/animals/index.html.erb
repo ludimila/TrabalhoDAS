@@ -1,8 +1,23 @@
 <div class="center">
 <h1>Pets Availables</h1>
+
+  <div class="row">
+    <form class="input_field col s12" action="/animals" method="GET"> 
+      <div class="row">
+        <div class="input_field col s12">
+          <input placeholder="Busca por raça" id="search" name="by_breed" type="text" width="20%">
+            <label for="search"> 
+              <button class="btn-floating waves-effect waves-light" type="submit"onclick="Materialize.toast('Busca Realizada!', 8000)"><i class="small material-icons right">search</i>
+              </button> 
+            </label>
+        </div>
+      </div>
+    </form>
+  </div>
+
 </div>
 <ul class="collection">
-<% @animals.each do |animal| %>
+<% @filtered.each do |animal| %>
     <li class="collection-item avatar">
       <img src="/assets/dog.jpeg" alt="" class="circle">
       <span class="title"><%= link_to animal.name, animal %></span>
