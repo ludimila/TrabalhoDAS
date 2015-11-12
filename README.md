@@ -8,3 +8,6 @@ Trabalho final para disciplina Desenvolvimento avançado de software.
 [![Build Status](https://drone.io/github.com/ludimila/TrabalhoDAS/status.png)](https://drone.io/github.com/ludimila/TrabalhoDAS/latest)
 
 Aplicação web tem como objetivo divulgar a doação e adoção de animais de estimação entre pessoas que morem perto.
+
+
+[![Coverage Status](https://coveralls.io/repos/ludimila/TrabalhoDAS/badge.svg?branch=master&service=github)](https://coveralls.io/github/ludimila/TrabalhoDAS?branch=coverall)
