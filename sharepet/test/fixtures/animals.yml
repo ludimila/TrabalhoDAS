@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  animalType: MyText
-  breed: MyText
-  age: 1
+  name: Toicinho
+  animalType: India
+  breed: Porco
+  age: 2
 
 two:
-  name: MyString
-  animalType: MyText
-  breed: MyText
-  age: 1
+  name: Batatinha
+  animalType: Vira Lata
+  breed: Cachorro
+  age: 5

@@ -1,0 +1,26 @@
+languages:
+   Ruby: true
+   JavaScript: false
+   Python: false
+   PHP: false
+
+engines:
+  rubocop:
+    enabled: true
+  csslint:
+    enabled: true
+
+ratings:
+   paths:
+   - app/**
+   - lib/**
+   - "**.rb"
+   - "**.go"
+
+exclude_paths:
+ - "sharepet/test/*"
+ - "sharepet/db/*"
+ - "sharepet/doc/*"
+ - "sharepet/public/*"
+ - "sharepet/scripts/*"
+ - "sharepet/bower_components/*"
