@@ -27,7 +27,6 @@ require 'capybara/rspec'
 RSpec.configure do |config|
   # Include the factory_girl methods
   config.include FactoryGirl::Syntax::Methods
-  FactoryGirl.find_definitions
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/test/fixtures"
