@@ -4,6 +4,8 @@ require 'rails/test_help'
 require 'coveralls'
 Coveralls.wear!
 
+TESTOPTS='-v'
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #
