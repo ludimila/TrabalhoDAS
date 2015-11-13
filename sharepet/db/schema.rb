@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20151116040829) do
 
+
   create_table "animals", :force => true do |t|
     t.string   "name"
     t.text     "animalType"
