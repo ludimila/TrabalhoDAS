@@ -29,12 +29,10 @@ RSpec.describe AnimalsController, type: :routing do
       expect(:delete => "/animals/0").to route_to("animals#destroy", :id => "0")
     end
   end
-end
-
   describe "Index page" do
     it "shows all pets" do
       visit '/animals'
-      expect(page).to have_content("Pets")
+      expect(page).to have_content("Pets Available")
       expect(page).to have_content("Share Pet")
     end
   end
@@ -53,3 +51,4 @@ end
     end
   end
 end
+

@@ -9,7 +9,7 @@ FactoryGirl.define do
     age 2
   end
 
-  factory :dog do
+  factory :dog, class: Animal do
     name "Batatinha"
     animalType "Vira Lata"
     breed "Cachorro"
