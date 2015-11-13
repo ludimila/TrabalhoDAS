@@ -58,5 +58,10 @@ module Sharepet
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Custom 404 page
+    require Rails.root.join("lib/custom_public_exceptions")
+    config.exceptions_app = CustomPublicExceptions.new(Rails.public_path)
+
   end
 end
