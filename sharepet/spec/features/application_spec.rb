@@ -6,6 +6,7 @@ describe "Every page" do
       visit path
       expect(page).to have_content("Share a pet!")
       expect(page).to have_content("Find a pet!")
+
       expect(page).to have_content("Theme made by Materialize")
     end
   end
