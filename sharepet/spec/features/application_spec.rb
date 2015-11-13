@@ -4,8 +4,12 @@ describe "Every page" do
   it "is customized" do
     ['/', '/404', '/animals'].each do |path|
       visit path
+<<<<<<< HEAD
       expect(page).to have_content("Share a pet!")
       expect(page).to have_content("Find a pet!")
+=======
+      expect(page).to have_content("Share Pet")
+>>>>>>> Starting using factories
       expect(page).to have_content("Theme made by Materialize")
     end
   end

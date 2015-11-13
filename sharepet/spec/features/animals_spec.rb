@@ -52,3 +52,4 @@ end
       expect(page).to have_link("Batatinha")
     end
   end
+end

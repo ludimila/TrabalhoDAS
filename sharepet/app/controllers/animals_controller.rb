@@ -7,8 +7,16 @@ class AnimalsController < ApplicationController
   # GET /animals.json
   def index(filter=nil)
     @animals = Animal.all.sort_by{|e| e[:name]}
+
     @filtered = apply_scopes(Animal).all.sort_by{|e| e[:name]}
     @available = @filtered.find_all { |animal| animal.adopted == true }
+
+    # @filtered = Animal.where(nil)
+    # filtering_params(params).each do |key, value|
+    #   @filtered = @filtered.public_send(key, value) if value.present?
+    # end
+    @filtered = apply_scopes(Animal).all.sort_by{|e| e[:name]}
+
 
 
     respond_to do |format|
