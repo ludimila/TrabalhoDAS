@@ -24,16 +24,27 @@
 </head>
 
 <body>
-  <nav class="orange" role="navigation">
-    <div class="nav-wrapper container">
-      <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Share Pet</a>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-        <li><a href='/animals/'id="download-button" class="btn-light waves-effect waves-orange teal lighten-1">Find one!</a></li>
-        <li><a href="#">Navbar Link</a></li>
+  <nav class="orange" role="navigation">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo center">Share Pet</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <div class="row right">
+          <a href='/animals/new'id="download-button" class="btn waves-effect waves-orange red">Share a pet!</a>
+          <a href='/animals/'id="download-button" class="btn waves-effect waves-orange red">Find a pet!</a>
+        </div>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="side-nav" id="mobile-demo">
+        <!-- <li class="search">
+            <input placeholder="Busca por raça" id="search_input" name="by_breed" type="text" width="100%">
+              <label for="search"> 
+                <button class="btn-floating waves-effect waves-light" id="search_button" type="submit"onclick="Materialize.toast('Search done!', 8000)"><i class="small material-icons right">search</i>
+                </button> 
+              </label>
+        </li> -->
+        <li><a href="/animals/">Find a pet!</a></li>
+        <li><a href="/animals/new">Share a pet!</a></li> 
     </div>
   </nav>
 
@@ -43,7 +54,7 @@
   <footer class="page-footer orange">
     <div class="container">
       <div class="row">
-        <div class="col l6 s2">
+        <div class="col s10 m4">
           <h5 class="white-text">Help Share Pet Grow</h5>
                       <p class="grey-text text-lighten-4">We hope you have enjoyed using Share Pet! We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
                       <form id="paypal-donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -55,13 +66,13 @@
           </form>
 
         </div>
-        <div class="col l3 s2">
+        <div class="col s10 m4">
           <h5 class="white-text">Join the Discussion</h5>
             <p class="grey-text text-lighten-4">We have a Gitter chat room set up where you can talk directly with everyone who wants to share a pet, including us! Come in and discuss new features, future goals, general problems or questions, or anything else you can think of.</p>
             <a class="btn waves-effect waves-light red" target="_blank" href="https://gitter.im/ludimila/TrabalhoDAS">Chat</a>
           
         </div>
-        <div class="col l3 s2">
+        <div class="col l3 s4">
           <h5 class="white-text">Connect</h5>
           <ul>
             <li><iframe src="http://ghbtns.com/github-btn.html?user=ludimila&amp;repo=TrabalhoDAS&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" scrolling="0" frameborder="0" height="30" width="170"></iframe></li>
@@ -85,6 +96,15 @@
 <script type="text/javascript" src="/assets/materialize.min.js"></script>
 <script src="/assets/materialize.js"></script>
 <script src="/assets/init.js"></script>
+
+<script type="text/javascript">
+   $('.button-collapse').sideNav({
+      menuWidth: 250, // Default is 240
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
+</script>
 
 </body>
 </html>

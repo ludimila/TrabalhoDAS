@@ -7677,10 +7677,10 @@ footer.page-footer .footer-copyright {
     border: none;
     border-radius: 2px;
     display: inline-block;
-    height: 36px;
-    line-height: 36px;
+    height: 32px;
+    line-height: 32px;
     outline: 0;
-    padding: 0 2rem;
+    padding: 0 1rem;
     text-transform: uppercase;
     vertical-align: middle;
     -webkit-tap-highlight-color: transparent
