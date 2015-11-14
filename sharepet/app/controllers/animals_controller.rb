@@ -10,14 +10,14 @@ class AnimalsController < ApplicationController
     # filtering_params(params).each do |key, value|
     #   @filtered = @filtered.public_send(key, value) if value.present?
     # end
-    @filtered = apply_scopes(Animal).all
+    @filtered = apply_scopes(Animal).all.sort_by{|e| e[:name]}
 
     # @animals = @animals.find_all { |post| post.name == 'Batatinha' }
     # @animals = @animals.find_all { |post| post.name == params[:filter] }
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @animals }
+      format.json { render json: @filtered }
     end
   end
 
