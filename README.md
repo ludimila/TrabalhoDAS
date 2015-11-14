@@ -1,5 +1,7 @@
 
 # TrabalhoDAS
+
+[![Join the chat at https://gitter.im/ludimila/TrabalhoDAS](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ludimila/TrabalhoDAS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Trabalho final para disciplina Desenvolvimento avançado de software.
 
 [![Stories in Ready](https://badge.waffle.io/ludimila/TrabalhoDAS.png?label=ready&title=Ready)](https://waffle.io/ludimila/TrabalhoDAS)
