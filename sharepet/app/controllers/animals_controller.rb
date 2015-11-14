@@ -1,12 +1,23 @@
 class AnimalsController < ApplicationController
+  include SmartListing::Helper::ControllerExtensions
+  helper  SmartListing::Helper
+  has_scope :by_breed
   # GET /animals
   # GET /animals.json
-  def index
-    @animals = Animal.all
+  def index(filter=nil)
+    @animals = Animal.all.sort_by{|e| e[:name]}
+    # @filtered = Animal.where(nil)
+    # filtering_params(params).each do |key, value|
+    #   @filtered = @filtered.public_send(key, value) if value.present?
+    # end
+    @filtered = apply_scopes(Animal).all.sort_by{|e| e[:name]}
+
+    # @animals = @animals.find_all { |post| post.name == 'Batatinha' }
+    # @animals = @animals.find_all { |post| post.name == params[:filter] }
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @animals }
+      format.json { render json: @filtered }
     end
   end
 
@@ -44,7 +55,7 @@ class AnimalsController < ApplicationController
 
     respond_to do |format|
       if @animal.save
-        format.html { redirect_to @animal, notice: 'Pet was successfully created.' }
+        format.html { redirect_to @animal }
         format.json { render json: @animal, status: :created, location: @animal }
       else
         format.html { render action: "new" }
@@ -60,7 +71,7 @@ class AnimalsController < ApplicationController
 
     respond_to do |format|
       if @animal.update_attributes(params[:animal])
-        format.html { redirect_to @animal, notice: 'Pet was successfully updated.' }
+        format.html { redirect_to @animal}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -80,4 +91,12 @@ class AnimalsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  # A list of the param names that can be used for filtering the Product list
+  def filtering_params(params)
+    params.slice(:status, :location, :starts_with)
+  end
+
 end

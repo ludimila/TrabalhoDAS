@@ -22,6 +22,9 @@ before_script:
 script:
   - rake db:migrate
   - rake test
+  - rake test:benchmark
+  - rake test:profile
+  - rake spec
 
 cache: bundler
 

@@ -14,7 +14,7 @@ capybara-*.html
 /db/*.sqlite3
 /db/*.sql
 /db/*.sqlite3-journal
-/public/system
+/public/
 /coverage/
 /spec/tmp
 **.orig
@@ -31,6 +31,7 @@ config/secrets.yml
 
 # these should all be checked in to normalise the environment:
 # Gemfile.lock, .ruby-version, .ruby-gemset
+Gemfile.lock
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
@@ -118,3 +119,5 @@ Session.vim
 .netrwhist
 *~
 
+### OSX ###
+.DS_Store
