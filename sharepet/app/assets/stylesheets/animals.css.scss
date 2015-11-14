@@ -34,8 +34,13 @@ h1 {
     padding: 1px 10px;
 }
 
-
 input [type="text"]{ 
+    width: 20%;
+    border-radius: 60px;
+    padding: 1px 10px;
+}
+
+.file-field input.file-path {
     width: 20%;
     border-radius: 60px;
     padding: 1px 10px;
