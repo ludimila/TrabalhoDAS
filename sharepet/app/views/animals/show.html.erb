@@ -2,18 +2,20 @@
 
 
 <div class="card" width="20%">
-  <div class="card-image waves-effect waves-block waves-light">
+  <div class="card-image">
     <img class="activator" src="/assets/dog1.jpeg">
   </div>
   <div class="card-content">
     <span class="card-title activator grey-text text-darken-4"><%= @animal.name %><i class="material-icons right">more_vert</i></span>
     <p>
-      <div class="card-action">
+      <div class="card-action row">
         <%= link_to 'Edit', edit_animal_path(@animal) %>
 
         <%= form_for(@animal) do |f| %>
+          <% if @animal.adopted %>
             <%= f.check_box :adopted , :type=>"checkbox", :disabled=>"disabled"%>
             <label for="test5">Adopted</label>
+          <% end %>
         <% end %>
 
 

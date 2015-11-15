@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(:version => 20151114200126) do
     t.text     "animalType"
     t.text     "breed"
     t.integer  "age"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20151114200126) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.boolean  "adopted"
+    t.boolean  "adopted",              :default => false
   end
 
 end

@@ -8325,6 +8325,7 @@ textarea.materialize-textarea {
     margin: 0 0 15px 0;
     padding: 0;
     box-shadow: none;
+    max-width: 400px;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
