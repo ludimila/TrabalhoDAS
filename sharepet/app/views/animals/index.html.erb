@@ -22,10 +22,13 @@
       <img src="/assets/dog.jpeg" alt="" class="circle">
       <span class="title"><%= link_to animal.name, animal %></span>
       <p>Specie: <%= animal.animalType %>
-         [<%= animal.breed %>] <br>
-         Age: <%= animal.age %> <br>
+        [<%= animal.breed %>] <br>
+        Age: <%= animal.age %>
+        <br>
       </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+      <% if animal.adopted %>
+        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+      <% end %>
     </li>
 <% end %>
 </ul>
@@ -33,3 +36,5 @@
 <div class="center">
   <a href='/animals/new'id="download-button" class="btn waves-effect waves-orange teal lighten-1">Share One!</a>
 </div>
+
+

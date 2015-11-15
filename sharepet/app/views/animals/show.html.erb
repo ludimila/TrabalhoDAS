@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="card">
+<div class="card" width="20%">
   <div class="card-image waves-effect waves-block waves-light">
     <img class="activator" src="/assets/dog1.jpeg">
   </div>
@@ -10,6 +10,14 @@
     <p>
       <div class="card-action">
         <%= link_to 'Edit', edit_animal_path(@animal) %>
+
+        <%= form_for(@animal) do |f| %>
+            <%= f.check_box :adopted , :type=>"checkbox", :disabled=>"disabled"%>
+            <label for="test5">Adopted</label>
+        <% end %>
+
+
+
       </div>
     </p>
   </div>
