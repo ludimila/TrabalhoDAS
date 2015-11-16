@@ -8,7 +8,8 @@ textarea {
 }
 
 .input-field [type="number"]{
-    width: 7%;
+    width: 20%;
+    max-width: 100px;
 }
 
 .card {
@@ -18,7 +19,7 @@ textarea {
     background-color: #FFF;
     transition: box-shadow 0.25s ease 0s;
     border-radius: 12px;
-    width: 50%;
+    width: 20%;
 }
 
 h1 {
@@ -28,6 +29,13 @@ h1 {
 }
 
 .input_field [type="text"]{ 
+    width: 20%;
+    border-radius: 60px;
+    padding: 1px 10px;
+}
+
+
+input [type="text"]{ 
     width: 20%;
     border-radius: 60px;
     padding: 1px 10px;

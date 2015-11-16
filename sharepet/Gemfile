@@ -37,7 +37,6 @@ group :test , :autotest do
   gem 'ruby-prof'
 end
 
-# gem 'thin'
 group :development, :test do
   gem "smart_listing"
   gem 'has_scope'

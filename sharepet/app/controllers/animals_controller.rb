@@ -2,18 +2,14 @@ class AnimalsController < ApplicationController
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
   has_scope :by_breed
+  has_scope :only_available, :type => :boolean, allow_blank: false
   # GET /animals
   # GET /animals.json
   def index(filter=nil)
     @animals = Animal.all.sort_by{|e| e[:name]}
-    # @filtered = Animal.where(nil)
-    # filtering_params(params).each do |key, value|
-    #   @filtered = @filtered.public_send(key, value) if value.present?
-    # end
     @filtered = apply_scopes(Animal).all.sort_by{|e| e[:name]}
+    @available = @filtered.find_all { |animal| animal.adopted == true }
 
-    # @animals = @animals.find_all { |post| post.name == 'Batatinha' }
-    # @animals = @animals.find_all { |post| post.name == params[:filter] }
 
     respond_to do |format|
       format.html # index.html.erb
