@@ -65,6 +65,7 @@ Sharepet::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'welcome#index'
   match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
+  resources :animals, only: [:index, :new, :create, :destroy]
 
   # See how all your routes lay out with "rake routes"
 
