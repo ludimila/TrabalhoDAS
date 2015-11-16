@@ -37,7 +37,7 @@
       <div class="file-field input-field col s5">
         <div class="btn">
           <span>File</span>
-          <%= f.file_field :attachment %>
+          <%= f.file_field :attachment, :accept=>"image/png,image/gif,image/jpeg"%>
         </div>
         <div class="file-path-wrapper">
           <input class="file-path validate" type="text" placeholder=<%= @animal.attachment %> >
