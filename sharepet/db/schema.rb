@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151114200126) do
-
+ActiveRecord::Schema.define(:version => 20151116040829) do
   create_table "animals", :force => true do |t|
     t.string   "name"
     t.text     "animalType"
@@ -29,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20151114200126) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.boolean  "adopted",              :default => false
+    t.string   "attachment"
   end
 
 end

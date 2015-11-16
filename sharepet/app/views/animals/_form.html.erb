@@ -30,6 +30,15 @@
     <%= f.label :age %>
     <%= f.number_field :age %>
   </div> 
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>File</span>
+      <%= f.file_field :attachment %>
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text" placeholder="Upload a picture">
+    </div>
+  </div>
   <div >
     <button class="btn waves-effect waves-light" type="submit" name="action" onclick="Materialize.toast('Successfully Submited!', 4000)">Submit
       <i class="material-icons right">send</i>

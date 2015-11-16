@@ -35,6 +35,15 @@
         <%= f.number_field :age %>
       </div> 
 
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>File</span>
+          <%= f.file_field :attachment %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload a picture">
+        </div>
+      </div>
 
       <div class="switch col s2">
         <label>
