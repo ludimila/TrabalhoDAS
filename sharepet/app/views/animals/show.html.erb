@@ -4,9 +4,9 @@
 <div class="card" width="20%">
   <div class="card-image">
     <% if @animal.attachment? %>
-      <%= image_tag(@animal.attachment.url) if @animal.attachment? %>
+      <%= image_tag(@animal.attachment.url, {:class=>"activator"}) if @animal.attachment? %>
     <% else %>
-      <img src="/assets/dog1.jpeg" alt="" class="circle">
+      <img src="/assets/dog1.jpeg" alt="" class="activator">
     <% end %>
   </div>
   <div class="card-content">
