@@ -14,7 +14,7 @@
     <p>
       <div class="card-action row">
         <%= link_to 'Edit', edit_animal_path(@animal) %>
-
+        <%= link_to 'delete' , animal_path(@animal), :confirm => 'Are you sure?', :method => :delete %>
         <%= form_for(@animal) do |f| %>
           <% if @animal.adopted %>
             <%= f.check_box :adopted , :type=>"checkbox", :disabled=>"disabled"%>
