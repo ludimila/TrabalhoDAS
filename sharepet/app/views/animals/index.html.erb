@@ -22,7 +22,6 @@
           </label>
           </div>
           </form>
-
       </div>
     </form>
   </div>
@@ -45,6 +44,8 @@
       <% if animal.adopted %>
         <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
       <% end %>
+      <a href="#!" class="secondary-content"><i class="material-icons"><%= link_to 'delete' , animal, :confirm => 'Are you sure?', :method => :delete %></i></a>
+    </li>
     </li>
 <% end %>
 </ul>
