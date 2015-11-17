@@ -3,7 +3,12 @@
 
 <div class="card" width="20%">
   <div class="card-image">
-    <img class="activator" src="/assets/dog1.jpeg">
+    <% if @animal.attachment? %>
+      <%= image_tag(@animal.attachment.url, {:class=>"activator"}) if @animal.attachment? %>
+    <% else %>
+      <img src="/assets/dog1.jpeg" alt="" class="activator">
+    <% end %>
+
   </div>
   <div class="card-action row">
     <!-- Settings button -->
