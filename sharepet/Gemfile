@@ -6,7 +6,12 @@ gem 'rails', '3.2.18'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+
 gem 'coveralls', require: false
+
+gem "paperclip", "~> 3.0"
+gem "cocaine", "= 0.5.7" 
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,6 +29,7 @@ gem 'jquery-rails'
 gem 'materialize-sass', "<= 0.97.2"
 gem 'haml'
 gem 'sprockets'
+gem 'carrierwave'
 
 group :test , :autotest do
   gem "minitest", "~> 4.0"

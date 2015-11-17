@@ -22,7 +22,6 @@
           </label>
           </div>
           </form>
-
       </div>
     </form>
   </div>
@@ -31,7 +30,11 @@
 <ul class="collection">
 <% @filtered.each do |animal| %>
     <li class="collection-item avatar">
-      <img src="/assets/dog.jpeg" alt="" class="circle">
+      <% if animal.attachment? %>
+        <img src=<%= animal.attachment.url%> alt="" class="circle">
+      <% else %>
+        <img src="/assets/dog.jpeg" alt="" class="circle">
+      <% end %>
       <span class="title"><%= link_to animal.name, animal %></span>
       <p>Specie: <%= animal.animalType %>
         [<%= animal.breed %>] <br>
@@ -41,6 +44,7 @@
       <% if animal.adopted %>
         <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
       <% end %>
+    </li>
     </li>
 <% end %>
 </ul>

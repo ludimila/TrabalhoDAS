@@ -34,9 +34,20 @@ h1 {
     padding: 1px 10px;
 }
 
-
 input [type="text"]{ 
     width: 20%;
     border-radius: 60px;
     padding: 1px 10px;
+}
+
+.file-field input.file-path {
+    width: 50%;
+    border-radius: 60px;
+    padding: 1px 10px;
+}
+
+.row .col.s6 {
+    width: 60%;
+    margin-left: 40%;
+    margin-right: -20%;
 }

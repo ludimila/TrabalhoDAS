@@ -14,12 +14,13 @@
       </div>
     <% end %>
 
+    <div class="row">
      <div class="input-field col s6">
       <%= f.label :name %>
       <%= f.text_field :name %>
     </div>
 
-    <div class="input-field col s12">
+    <div class="input-field col s6">
       <%= f.label "Specie" %>
       <%= f.text_field :animalType %>
     </div>
@@ -29,11 +30,24 @@
       <%= f.text_field :breed %>
     </div>
 
-
-      <div class="input-field col s2 ">
+</div><div class="row">
+      <div class="input-field col s5 ">
         <%= f.label :age %>
         <%= f.number_field :age %>
       </div> 
+
+
+      <div class="file-field input-field col s5">
+        <div class="btn">
+          <span>File</span>
+          <%= f.file_field :attachment, :accept=>"image/png,image/gif,image/jpeg"%>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder=<%= @animal.attachment %> >
+        </div>
+      </div>
+      <!-- <%= f.file_field :attachment %> -->
+    </div>
 
 
       <div class="switch col s2">
@@ -44,8 +58,7 @@
           Adopted
         </label>
       </div>
-
-  <br>
+      <br><br>
 
     <div >
       <button class="btn waves-effect waves-light" type="submit" name="action" onclick="Materialize.toast('Successfully Submited!', 4000)">Submit
