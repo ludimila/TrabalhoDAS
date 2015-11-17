@@ -24,14 +24,27 @@
 </head>
 
 <body>
-  <nav class="orange" role="navigation">
-    <div class="nav-wrapper container">
-      <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Share Pet</a>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+  <nav class="orange" role="navigation">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo center">Share Pet</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <div class="row right">
+          <a href='/animals/new'id="download-button" class="btn waves-effect waves-orange red">Share a pet!</a>
+          <a href='/animals/'id="download-button" class="btn waves-effect waves-orange red">Find a pet!</a>
+        </div>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="side-nav" id="mobile-demo">
+        <!-- <li class="search">
+            <input placeholder="Busca por raça" id="search_input" name="by_breed" type="text" width="100%">
+              <label for="search"> 
+                <button class="btn-floating waves-effect waves-light" id="search_button" type="submit"onclick="Materialize.toast('Search done!', 8000)"><i class="small material-icons right">search</i>
+                </button> 
+              </label>
+        </li> -->
+        <li><a href="/animals/">Find a pet!</a></li>
+        <li><a href="/animals/new">Share a pet!</a></li> 
     </div>
   </nav>
 
@@ -41,28 +54,31 @@
   <footer class="page-footer orange">
     <div class="container">
       <div class="row">
-        <div class="col l6 s2">
-          <h5 class="white-text">Share Pet</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
+        <div class="col s10 m4">
+          <h5 class="white-text">Help Share Pet Grow</h5>
+                      <p class="grey-text text-lighten-4">We hope you have enjoyed using Share Pet! We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                      <form id="paypal-donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input name="cmd" value="_s-xclick" type="hidden">
+          <input name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+          " type="hidden">
+          <button class="btn waves-effect waves-light red" type="submit" name="action" alt="PayPal - The safer, easier way to pay online!">Donate Now
+          </button>
+          </form>
 
         </div>
-        <div class="col l3 s2">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+        <div class="col s10 m4">
+          <h5 class="white-text">Join the Discussion</h5>
+            <p class="grey-text text-lighten-4">We have a Gitter chat room set up where you can talk directly with everyone who wants to share a pet, including us! Come in and discuss new features, future goals, general problems or questions, or anything else you can think of.</p>
+            <a class="btn waves-effect waves-light red" target="_blank" href="https://gitter.im/ludimila/TrabalhoDAS">Chat</a>
+          
         </div>
-        <div class="col l3 s2">
+        <div class="col l3 s4">
           <h5 class="white-text">Connect</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><iframe src="http://ghbtns.com/github-btn.html?user=ludimila&amp;repo=TrabalhoDAS&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" scrolling="0" frameborder="0" height="30" width="170"></iframe></li>
+            <li><iframe data-screen-name="ca1quepereira" src="http://platform.twitter.com/widgets/follow_button.e00c464da75b252cb1a028400793cadc.en.html#_=1447469722132&amp;dnt=true&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=ca1quepereira&amp;show_count=true&amp;show_screen_name=true&amp;size=l" title="Twitter Follow Button" style="position: static; visibility: visible; width: 299px; height: 28px;" class="twitter-follow-button twitter-follow-button-rendered" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe></li>
+            <!-- <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li> -->
           </ul>
         </div>
       </div>
@@ -80,6 +96,15 @@
 <script type="text/javascript" src="/assets/materialize.min.js"></script>
 <script src="/assets/materialize.js"></script>
 <script src="/assets/init.js"></script>
+
+<script type="text/javascript">
+   $('.button-collapse').sideNav({
+      menuWidth: 250, // Default is 240
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
+</script>
 
 </body>
 </html>

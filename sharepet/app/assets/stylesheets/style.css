@@ -12,3 +12,19 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+
+.side-nav {
+    /*width: 240px;*/
+    /*top: 0px;*/
+    margin: 5px;
+    height: calc(100%);
+    padding-bottom: 60px;
+    background-color: orange;
+    z-index: 999;
+    overflow-y: auto;
+    will-change: left;
+}
+
+nav ul {
+    margin: 15px;
+}

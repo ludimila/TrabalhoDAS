@@ -1,0 +1,4 @@
+sharepet/bower_components/* linguist-vendored
+/bower_components/* linguist-vendored
+bower_components/* linguist-vendored
+jquery.js linguist-vendored=true

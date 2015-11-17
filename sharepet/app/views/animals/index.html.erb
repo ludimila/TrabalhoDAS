@@ -1,16 +1,28 @@
 <div class="center">
-<h1>Pets Available</h1>
+<h1>Pets</h1>
 
   <div class="row">
     <form class="input_field col s12" action="/animals" method="GET"> 
       <div class="row">
         <div class="input_field col s12">
-          <input placeholder="Busca por raça" id="search_input" name="by_breed" type="text" width="20%">
+          <input placeholder="Search by breed" id="search_input" name="by_breed" type="text" width="20%">
             <label for="search"> 
-              <button class="btn-floating waves-effect waves-light" id="search_button" type="submit"onclick="Materialize.toast('Busca Realizada!', 8000)"><i class="small material-icons right">search</i>
+              <button class="btn-floating waves-effect waves-light" id="search_button" type="submit"onclick="Materialize.toast('Search done!', 8000)"><i class="small material-icons right">search</i>
               </button> 
             </label>
         </div>
+          <form>
+          <div class="switch right">
+          <label >
+            All
+            <%= check_box "", :only_available, {:onclick=>"Materialize.toast('Filter changed!',1000)",:checked=>""}, true, false %>
+            <span class="lever"></span>
+            Only Available
+            <%= submit_tag 'Refresh', id: "refresh_only_adopted", :class=>"btn" %>
+          </label>
+          </div>
+          </form>
+
       </div>
     </form>
   </div>
@@ -22,10 +34,13 @@
       <img src="/assets/dog.jpeg" alt="" class="circle">
       <span class="title"><%= link_to animal.name, animal %></span>
       <p>Specie: <%= animal.animalType %>
-         [<%= animal.breed %>] <br>
-         Age: <%= animal.age %> <br>
+        [<%= animal.breed %>] <br>
+        Age: <%= animal.age %>
+        <br>
       </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+      <% if animal.adopted %>
+        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+      <% end %>
     </li>
 <% end %>
 </ul>
@@ -33,3 +48,5 @@
 <div class="center">
   <a href='/animals/new'id="download-button" class="btn waves-effect waves-orange teal lighten-1">Share One!</a>
 </div>
+
+
