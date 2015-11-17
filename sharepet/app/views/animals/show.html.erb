@@ -1,30 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="card" width="20%">
-  <div class="card-image">
-    <% if @animal.attachment? %>
-      <%= image_tag(@animal.attachment.url, {:class=>"activator"}) if @animal.attachment? %>
-    <% else %>
-      <img src="/assets/dog1.jpeg" alt="" class="activator">
-    <% end %>
-  </div>
-  <div class="card-content">
-    <span class="card-title activator grey-text text-darken-4"><%= @animal.name %><i class="material-icons right">more_vert</i></span>
-    <p>
-      <div class="card-action row">
-        <%= link_to 'Edit', edit_animal_path(@animal) %>
-        <%= link_to 'delete' , animal_path(@animal), :confirm => 'Are you sure?', :method => :delete %>
-        <%= form_for(@animal) do |f| %>
-          <% if @animal.adopted %>
-            <%= f.check_box :adopted , :type=>"checkbox", :disabled=>"disabled"%>
-            <label for="test5">Adopted</label>
-          <% end %>
+<div class="card-action row">
+  <!-- Settings button -->
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">settings</i>
+    </a>
+    <ul>
+      <li><%= link_to @animal, confirm: 'Are you sure?', disable_with: 'deleting...', method: :delete, class: 'btn-floating red' do %>
+        <i class="material-icons">delete</i>
         <% end %>
-
-      </div>
-    </p>
+      </li>
+      <li><a class="btn-floating yellow darken-1"><i class="material-icons">location_on</i></a></li>
+      <li><a href="https://gitter.im/ludimila/TrabalhoDAS" class="btn-floating green"><i class="material-icons">forum</i></a></li>
+      <li><a href=<%= edit_animal_path(@animal) %> class="btn-floating blue"><i class="material-icons">mode_edit</i></a></li>
+    </ul>
   </div>
+        
+  <%= form_for(@animal) do |f| %>
+    <% if @animal.adopted %>
+      <%= f.check_box :adopted , :type=>"checkbox", :disabled=>"disabled"%>
+      <label for="test5">Adopted</label>
+    <% end %>
+  <% end %>
+</div>
+
   <div class="card-reveal">
     <span class="card-title grey-text text-darken-4"><%= @animal.name %><i class="material-icons right">close</i></span>
     <p>
