@@ -8,10 +8,10 @@ gem 'rails', '3.2.18'
 gem 'pg'
 
 gem 'coveralls', require: false
+gem 'bcrypt', '3.1.7'
 
 gem "paperclip", "~> 3.0"
 gem "cocaine", "= 0.5.7" 
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -43,6 +43,7 @@ group :test , :autotest do
   gem 'ruby-prof'
 end
 
+
 group :development, :test do
   gem "smart_listing"
   gem 'has_scope'
@@ -57,7 +58,7 @@ group :development do
   gem 'quiet_assets'
 end
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

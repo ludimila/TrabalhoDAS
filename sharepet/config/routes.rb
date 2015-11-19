@@ -1,4 +1,9 @@
 Sharepet::Application.routes.draw do
+  get "users/new"
+
+  resources :users
+
+
   get "welcome/index"
 
   resources :animals

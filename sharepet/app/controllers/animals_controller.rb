@@ -1,6 +1,7 @@
 class AnimalsController < ApplicationController
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
+
   has_scope :by_breed
   has_scope :only_available, :type => :boolean, allow_blank: false
   # GET /animals
@@ -10,7 +11,10 @@ class AnimalsController < ApplicationController
     @filtered = apply_scopes(Animal).all.sort_by{|e| e[:name]}
     @available = @filtered.find_all { |animal| animal.adopted == true }
 
-
+    @filtered = apply_scopes(Animal).all
+    animals_scope = Animal.unscoped
+    animals_scope = animals_scope.like(params[:filter]) if params[:filter]
+  
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @filtered }
@@ -51,7 +55,10 @@ class AnimalsController < ApplicationController
 
     respond_to do |format|
       if @animal.save
-        format.html { redirect_to @animal }
+        # Tell the ReportMailer to send a report email after save
+        ReportMailer.sharingPetMail(@animal).deliver
+        format.html { redirect_to @animal, notice: 'Pet was successfully created.' }
+        
         format.json { render json: @animal, status: :created, location: @animal }
       else
         format.html { render action: "new" }
