@@ -1,5 +1,5 @@
 <body>
-  <div class="container">
+  <div class="container center">
     <%= form_for(@user) do |f| %>
       <% if @user.errors.any? %>
         <div id="error_explanation">
@@ -13,34 +13,48 @@
         </div>
       <% end %>
 
-      <div class="field">
-        <%= f.label :username %><br />
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :username %>
         <%= f.text_field :username %>
-      </div>
-      <div class="field">
-        <%= f.label :password %><br />
-        <%= f.text_field :password %>
-      </div>
-      <div class="field">
-        <%= f.label :name %><br />
+      </div><br>
+
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div><br>
+      
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :name %>
         <%= f.text_field :name %>
-      </div>
-      <div class="field">
-        <%= f.label :email %><br />
+      </div><br>
+
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :email %>
         <%= f.email_field :email %>
-      </div>
-      <div class="field">
-        <%= f.label :phone_number %><br />
+      </div><br>
+
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :phone_number %>
         <%= f.text_field :phone_number %>
-      </div>
-      <div class="field">
-        <%= f.label :zip_code %><br />
+      </div><br>
+
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :zip_code %>
         <%= f.text_field :zip_code %>
-      </div>
-      <div class="field">
-        <%= f.label :address %><br />
+      </div><br>
+
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :address %>
         <%= f.text_field :address %>
-      </div>
+      </div><br>
+
       <div class="actions">
         <%= f.submit %>
       </div>
