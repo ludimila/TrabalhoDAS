@@ -11,34 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20151116040829) do
-
 
   create_table "animals", :force => true do |t|
     t.string   "name"
     t.text     "animalType"
     t.text     "breed"
     t.integer  "age"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.string   "attach_file_name"
-    t.string   "attach_content_type"
-    t.integer  "attach_file_size"
-    t.datetime "attach_updated_at"
-    t.string   "pic_file_name"
-    t.string   "pic_content_type"
-    t.integer  "pic_file_size"
-    t.datetime "pic_updated_at"
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "adopted",              :default => false
     t.string   "picture"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.boolean  "adopted",              :default => false
     t.string   "attachment"
   end
 
