@@ -34,21 +34,19 @@
           <a href='/animals/new'id="download-button" class="btn waves-effect waves-orange red">Share a pet!</a>
           <a href='/animals/'id="download-button" class="btn waves-effect waves-orange red">Find a pet!</a>
           <% if logged_in? %>
-              <%= link_to "Log out", logout_path, method: :delete, :class=>"btn waves-effect waves-orange red" %>
-              <% else %>
-              <a href='/login'id="download-button" class="btn waves-effect waves-orange red">Login</a>
-            <% end %>
+            <%= link_to "Log out", logout_path, method: :delete, :class=>"btn waves-effect waves-orange red" %>
+            <% else %>
+            <a href='/login'id="download-button" class="btn waves-effect waves-orange red">Login</a>
+          <% end %>
         </div>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <!-- <li class="search">
-            <input placeholder="Busca por raça" id="search_input" name="by_breed" type="text" width="100%">
-              <label for="search"> 
-                <button class="btn-floating waves-effect waves-light" id="search_button" type="submit"onclick="Materialize.toast('Search done!', 8000)"><i class="small material-icons right">search</i>
-                </button> 
-              </label>
-        </li> -->
-        <li><a href="/animals/">Find a pet!</a></li>
+        <% if logged_in? %>
+          <li><%= link_to "Welcome, " + @user.name %></li>
+          <li><a href="/login/" id="one"><%= link_to "Log out", logout_path, method: :delete %></a></li>
+        <% else %>
+          <li><a href="/login/" id="two">Login</a></li>
+        <% end %>
         <li><a href="/animals/">Find a pet!</a></li>
         <li><a href="/animals/new">Share a pet!</a></li> 
     </div>
