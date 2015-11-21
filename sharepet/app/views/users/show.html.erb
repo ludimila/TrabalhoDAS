@@ -3,6 +3,12 @@
 
     <p id="notice"><%= notice %></p>
 
+    <% if @user.attachment? %>
+      <%= image_tag(@user.attachment.url, {:class=>"activator"}) if @user.attachment? %>
+    <% else %>
+      <img src="/assets/dog1.jpeg" alt="" class="activator">
+    <% end %>
+
     <p>
       <b>Username:</b>
       <%= @user.username %>
