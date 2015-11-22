@@ -1,4 +1,7 @@
 Sharepet::Application.routes.draw do
+
+  get '/auth/:provider/callback', to: 'sessions#createTwitter'
+
   get "users/new"
   get "sessions/new"
 
