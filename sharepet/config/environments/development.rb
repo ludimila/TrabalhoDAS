@@ -25,7 +25,7 @@ Sharepet::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => 'baci.lindsaar.net',
+    :domain               => 'google.com',
     :user_name            => 'sharepet3',
     :password             => '123admin456',
     :authentication       => 'plain',
