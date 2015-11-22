@@ -20,7 +20,7 @@
       <!-- ----------- -->
 
       <div class="card" width="40%">
-        <div class="circle">
+        <div class="card-image">
           <% if @user.attachment? %>
             <%= image_tag(@user.attachment.url, {:class=>"activator"}) if @user.attachment? %>
           <% else %>
