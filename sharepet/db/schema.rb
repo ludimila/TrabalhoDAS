@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151122150328) do
+ActiveRecord::Schema.define(:version => 20151122174055) do
 
   create_table "animals", :force => true do |t|
     t.string   "name"
@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(:version => 20151122150328) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "adopted",              :default => false
     t.string   "picture"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.boolean  "adopted",              :default => false
     t.string   "attachment"
   end
 
@@ -43,12 +43,14 @@ ActiveRecord::Schema.define(:version => 20151122150328) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
+    t.string   "attachement"
+    t.string   "remember_digest"
+    t.string   "attachment"
     t.string   "profile_image"
     t.string   "token"
     t.string   "secret"
     t.string   "provider"
     t.string   "uid"
-    t.string   "attachment"
   end
 
   add_index "users", ["username"], :name => "index_users_on_username", :unique => true
