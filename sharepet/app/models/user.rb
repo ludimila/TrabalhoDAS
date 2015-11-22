@@ -20,4 +20,14 @@ def self.find_or_create_from_auth_hash(auth_hash)
   	user
   end
 
+def twitter
+  @client ||= Twitter::REST::Client.new do |config|
+   config.consumer_key        = "CjnwzLIJ9M8fuag7rjtghPuvM"
+   config.consumer_secret     = "qj4X7A373kguT6gJtoi2kIqBtZ0xDWS6WPxvEPQUAvkjGT08nZ"
+   config.access_token        = token
+   config.access_token_secret = secret
+  end
+end
+
+
 end
