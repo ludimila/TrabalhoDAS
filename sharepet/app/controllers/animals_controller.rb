@@ -9,12 +9,9 @@ class AnimalsController < ApplicationController
 
   def index(filter=nil)
     @animals = Animal.all.sort_by{|e| e[:name]}
+
     @filtered = apply_scopes(Animal).all.sort_by{|e| e[:name]}
     @available = @filtered.find_all { |animal| animal.adopted == true }
-
-    @filtered = apply_scopes(Animal).all
-    animals_scope = Animal.unscoped
-    animals_scope = animals_scope.like(params[:filter]) if params[:filter]
   
     respond_to do |format|
       format.html # index.html.erb
@@ -58,7 +55,7 @@ class AnimalsController < ApplicationController
     respond_to do |format|
       if @animal.save
         # Tell the ReportMailer to send a report email after save
-        ReportMailer.sharingPetMail(@animal).deliver
+        # ReportMailer.sharingPetMail(@animal).deliver
         format.html { redirect_to @animal, notice: 'Pet was successfully created.' }
         
         format.json { render json: @animal, status: :created, location: @animal }
