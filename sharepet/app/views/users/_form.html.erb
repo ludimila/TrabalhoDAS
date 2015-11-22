@@ -1,45 +1,70 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<body>
+  <div class="container center">
+    <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+      </div><br>
+
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div><br>
+      
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div><br>
+
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div><br>
+
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number %>
+      </div><br>
+
+      <div class="row">
+        <div class="input-field col s6">
+        <%= f.label :zip_code %>
+        <%= f.text_field :zip_code %>
+      </div><br>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <%= f.label :address %>
+          <%= f.text_field :address %>
+        </div>
+          <div class="btn">
+          <span>File</span>
+          <%= f.file_field :attachment, :accept=>"image/png,image/gif,image/jpeg"%>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" >
+        </div>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number %><br />
-    <%= f.text_field :phone_number %>
-  </div>
-  <div class="field">
-    <%= f.label :zip_code %><br />
-    <%= f.text_field :zip_code %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</body>
