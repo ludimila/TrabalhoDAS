@@ -14,7 +14,8 @@ def self.find_or_create_from_auth_hash(auth_hash)
   		token: auth_hash.credentials.token,
   		secret: auth_hash.credentials.secret,
      	email: "email twitter",
-     	password: "senha twitter"
+     	password: "senha twitter",
+     	attachment: "anexo teste"
   		)
   	user
   end
