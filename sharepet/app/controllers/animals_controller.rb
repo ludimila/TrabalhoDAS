@@ -13,10 +13,10 @@ class AnimalsController < ApplicationController
     @filtered = apply_scopes(Animal).all.sort_by{|e| e[:name]}
     @available = @filtered.find_all { |animal| animal.adopted == true }
   
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @filtered }
-
+   if params[:search].present?
+        @animals = Animal.near(params[:search], 50, :order => :distance)
+    else
+        @animals = Animal.all
     end
   end
 
