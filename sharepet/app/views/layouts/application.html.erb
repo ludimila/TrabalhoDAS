@@ -33,6 +33,7 @@
           <a href='/animals/new'id="download-button" class="btn waves-effect waves-orange red">Share a pet!</a>
           <a href='/animals/'id="download-button" class="btn waves-effect waves-orange red">Find a pet!</a>
           <% if logged_in? %>
+            <li><%= link_to "Welcome, " + @current_user.name %></li>
             <%= link_to "Log out", logout_path, method: :delete, :class=>"btn waves-effect waves-orange red" %>
             <% else %>
             <a href='/login'id="download-button" class="btn waves-effect waves-orange red">Login</a>
