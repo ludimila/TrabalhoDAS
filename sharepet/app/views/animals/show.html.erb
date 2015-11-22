@@ -48,6 +48,13 @@
       <b>Age: </b>
       <%= @animal.age %>
     </p>
+    <p>
+      <b>Address: </b>
+      <%= @animal.address %>
+    </p>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@animal.latitude}%2C#{@animal.longitude}" %>
+
+  </div>
   </div>
 </div>
 

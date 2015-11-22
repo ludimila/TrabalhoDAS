@@ -6,6 +6,7 @@ class AnimalsController < ApplicationController
   has_scope :only_available, :type => :boolean, allow_blank: false
   # GET /animals
   # GET /animals.json
+
   def index(filter=nil)
     @animals = Animal.all.sort_by{|e| e[:name]}
     @filtered = apply_scopes(Animal).all.sort_by{|e| e[:name]}
@@ -18,6 +19,7 @@ class AnimalsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @filtered }
+
     end
   end
 
