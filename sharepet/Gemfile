@@ -62,6 +62,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'omniauth-twitter', '~> 1.1.0'
 
+gem 'twitter', '~> 5.13.0'
+
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
