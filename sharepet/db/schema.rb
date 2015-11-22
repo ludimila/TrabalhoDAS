@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151116040829) do
+ActiveRecord::Schema.define(:version => 20151122144345) do
 
   create_table "animals", :force => true do |t|
     t.string   "name"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(:version => 20151116040829) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
+    t.string   "attachement"
+    t.string   "remember_digest"
     t.string   "attachment"
   end
 
