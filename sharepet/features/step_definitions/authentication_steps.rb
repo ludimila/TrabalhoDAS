@@ -71,3 +71,15 @@ end
 E(/^eu clico no botao "(.*?)"$/) do |arg1|
   click_button(arg1)
 end
+
+#filtro
+
+Dado(/^que eu estou na pagina de animais$/) do
+  visit "/animals"
+end
+
+Dado(/^preencho o campo "(.*?)" com "(.*?)"$/) do |arg1, arg2|
+  fill_in arg1, with: arg2
+end
+
+
