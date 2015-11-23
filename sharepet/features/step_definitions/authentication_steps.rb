@@ -12,10 +12,6 @@ Entao(/^vejo o texto "(.*?)"$/) do |arg1|
 	assert page.has_text?("Pets Available")
 end
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 616c18e30abe6255a29beb7b6f19836ba0e04401
 #cadastro animal
 
 
@@ -30,9 +26,6 @@ end
 Entao(/^sou redirecionado para a pagina "(.*?)"$/) do |arg1|
 	visit "animals/1"
 end
-
-
-
 
 
 Dado(/^preencho os campos de cadastro$/) do
