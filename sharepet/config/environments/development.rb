@@ -25,10 +25,10 @@ Sharepet::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.mail.yahoo.com",
     :port                 => 465,
-    :domain               => 'yahoo.com.br',
+    :domain               => 'yahoo.com',
     :user_name            => 'sharepetdas@yahoo.com.br',
     :password             => '123admin456',
-    :authentication       => 'login',
+    :authentication       => 'plain',
     :enable_starttls_auto => true  }
 
   # Print deprecation notices to the Rails logger
