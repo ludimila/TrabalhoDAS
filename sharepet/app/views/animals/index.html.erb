@@ -41,13 +41,14 @@
         <p>Specie: <%= animal.animalType %>
           [<%= animal.breed %>] <br>
           <div class = "right">
-            <a href="#" id="" class="btn waves-effect waves-orange teal lighten-1"> I'm Interested</a>
           </div>
           Age: <%= animal.age %>
           <br>
         </p>
         <% if animal.adopted %>
           <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+        <% else %>
+          <a href="#" id="" class="btn right waves-effect waves-orange teal lighten-1"> I'm Interested</a>
         <% end %>
       </li>
   <% end %>
