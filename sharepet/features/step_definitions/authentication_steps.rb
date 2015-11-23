@@ -5,7 +5,7 @@ Dado(/^que eu estou na homepage$/) do
 end
 
 Quando(/^eu clico no link "(.*?)"$/) do |arg1|
- 	find(arg1).click_button
+ 	click_link arg1
 end
 
 Entao(/^vejo o texto "(.*?)"$/) do |arg1|
