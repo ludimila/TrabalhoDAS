@@ -1,4 +1,3 @@
-#language: pt
 
 Funcionalidade: Ver pets doados
 	Para poder ver um pet que esta sendo doado
