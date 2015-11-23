@@ -14,6 +14,16 @@ class SessionsController < ApplicationController
   	end
   end
 
+def createTwitter
+    user = User.find_or_create_from_auth_hash(auth_hash)
+    user.save!
+    # session[:user_id] = user.id
+
+    log_in user
+
+    redirect_to root_path
+  end
+
   def destroy
     log_out
     redirect_to root_url
@@ -30,6 +40,12 @@ class SessionsController < ApplicationController
 
   def logged_in?
     !current_user.nil?
+  end
+
+protected
+
+  def auth_hash
+    request.env['omniauth.auth']
   end
 
 end

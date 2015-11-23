@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151116040829) do
+ActiveRecord::Schema.define(:version => 20151122174055) do
 
 
   create_table "animals", :force => true do |t|
@@ -45,7 +45,14 @@ ActiveRecord::Schema.define(:version => 20151116040829) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
+    t.string   "attachement"
+    t.string   "remember_digest"
     t.string   "attachment"
+    t.string   "profile_image"
+    t.string   "token"
+    t.string   "secret"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["username"], :name => "index_users_on_username", :unique => true
