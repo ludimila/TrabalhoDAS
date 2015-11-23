@@ -1,17 +1,5 @@
 #language: pt
 
-<<<<<<< HEAD
-Funcionalidade: Login
-	Para poder ter acesso a aplicacao 
-	Como usuario
-	Quero estar logado
-
-Cenario: Visualizar pagina de login
-
-	Dado que eu estou na pagina inicial
-	Quando clico no botao "Login"
-	Entao vou para a pagina de login
-=======
 Funcionalidade: Fazer login
 	Para poder acessar o sistema
 	Como usuario
@@ -33,4 +21,3 @@ Funcionalidade: Fazer login
 		E eu preencho em "Password" with "user123"
 		E clico no botao "Log in"
 		Entao vejo a mensagem "Welcome, System user"
->>>>>>> b6638b529d5ccafe01ce209d406eb3ab87eddc26
