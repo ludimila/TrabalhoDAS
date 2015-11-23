@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20151116040829) do
 
-
   create_table "animals", :force => true do |t|
     t.string   "name"
     t.text     "animalType"
@@ -31,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20151116040829) do
     t.datetime "picture_updated_at"
     t.boolean  "adopted",              :default => false
     t.string   "attachment"
-
   end
 
   create_table "users", :force => true do |t|
