@@ -24,12 +24,12 @@ ActiveRecord::Schema.define(:version => 20151116040829) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
-    t.boolean  "adopted",              :default => false
     t.string   "picture"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.boolean  "adopted",              :default => false
     t.string   "attachment"
 
   end
