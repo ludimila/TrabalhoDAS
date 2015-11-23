@@ -58,16 +58,3 @@ end
 Entao(/^vejo o perfil do animal$/) do
   pending # express the regexp above with the code you wish you had
 end
-
-
-# Dado(/^que eu estou na pagina do formulario de cadastro$/) do
-#     visit "animals/new"
-# end
-
-# Dado(/^clico no botao "(.*?)"$/) do |arg1|
-#     click_button arg1
-# end
-
-# Entao(/^sou redirecionado para a pagina "(.*?)"$/) do |arg1|
-#     visit arg1
-# end
