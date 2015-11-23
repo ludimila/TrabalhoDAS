@@ -58,3 +58,17 @@ end
 Entao(/^vejo o perfil do animal$/) do
   pending # express the regexp above with the code you wish you had
 end
+
+Dado( /^que eu sou (.*)/ ) do |role|
+  if role.eql?( "doador" )
+    @user = FactoryGirl.create( :user )
+  end
+end
+
+E( /^eu estou logado/ ) do
+  login_as( @user, scope: :user )
+end
+
+E(/^eu clico no botao "(.*?)"$/) do |arg1|
+  click_button(arg1)
+end
