@@ -14,7 +14,7 @@
     <div class="row">
      <div class="input-field col s6">
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :value => "Pet" %>
     </div>
 
     <div class="input-field col s6">
@@ -29,13 +29,13 @@
   
     <div class="input-field col s6">
       <%= f.label :breed %>
-      <%= f.text_field :breed %>
+      <%= f.text_field :breed, :value => "Pet" %>
     </div>
 
 </div><div class="row">
       <div class="input-field col s5 ">
         <%= f.label :age %>
-        <%= f.number_field :age %>
+        <%= f.number_field :age, :min => 0, :value => 0 %>
       </div> 
 
 

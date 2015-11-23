@@ -51,12 +51,18 @@ class AnimalsController < ApplicationController
   # POST /animals.json
   def create
     @animal = Animal.new(params[:animal])
-    @animal.donor = current_user.username
+    if current_user
+      @animal.donor = current_user.username
+    end
 
     respond_to do |format|
       if @animal.save
         # Tell the ReportMailer to send a report email after save
-        # ReportMailer.sharingPetMail(@animal).deliver
+        if current_user
+          if current_user.email
+            ReportMailer.sharingPetMail(@animal).deliver
+          end
+        end
         format.html { redirect_to @animal, notice: 'Pet was successfully created.' }
         
         format.json { render json: @animal, status: :created, location: @animal }
