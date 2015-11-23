@@ -5,7 +5,7 @@ Dado(/^que eu estou na homepage$/) do
 end
 
 Quando(/^eu clico no link "(.*?)"$/) do |arg1|
-	click_link arg1
+ 	find(arg1).click_button
 end
 
 Entao(/^vejo o texto "(.*?)"$/) do |arg1|
@@ -21,7 +21,6 @@ Entao(/^vejo a mensagem "(.*?)"$/) do |arg1|
 end
 
 #cadastro animal
-
 
 Dado(/^que eu estou na pagina do formulario de cadastro$/) do
 	visit "animals/new"
