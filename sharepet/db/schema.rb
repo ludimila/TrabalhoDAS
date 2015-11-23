@@ -23,14 +23,11 @@ ActiveRecord::Schema.define(:version => 20151122174055) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "attach_file_name"
-    t.string   "attach_content_type"
-    t.integer  "attach_file_size"
-    t.datetime "attach_updated_at"
-    t.string   "pic_file_name"
-    t.string   "pic_content_type"
-    t.integer  "pic_file_size"
-    t.datetime "pic_updated_at"
+    t.string   "picture"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
     t.boolean  "adopted",              :default => false
     t.string   "attachment"
     t.string   "donor"
@@ -48,8 +45,6 @@ ActiveRecord::Schema.define(:version => 20151122174055) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
-    t.string   "attachement"
-    t.string   "remember_digest"
     t.string   "attachment"
     t.string   "profile_image"
     t.string   "token"

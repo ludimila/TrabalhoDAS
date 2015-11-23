@@ -41,9 +41,9 @@ development:
 test: &test
   adapter: postgresql
   database: travis_ci_test
-  username: postgres
-  # username: sharepet
-  # password: admin
+  # username: postgres
+  username: sharepet
+  password: admin
 
 production:
   adapter: postgresql
