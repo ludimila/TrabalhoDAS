@@ -15,4 +15,4 @@ Funcionalidade: Doar pet
 	E eu preencho em "Breed" com "Nelore"
 	E eu preencho em "Age" com "12"
 	E eu clico no botao "Submit"
-	Entao sou redirecionado para a pagina "/animals/1"
+	Entao vejo a mensagem "Pet was successfully created."

@@ -31,7 +31,7 @@ Dado(/^clico no botao "(.*?)"$/) do |arg1|
 end
 
 Entao(/^sou redirecionado para a pagina "(.*?)"$/) do |arg1|
-	visit "animals/1"
+	visit arg1
 end
 
 
