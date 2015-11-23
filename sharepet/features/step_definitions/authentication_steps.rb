@@ -82,4 +82,6 @@ Dado(/^preencho o campo "(.*?)" com "(.*?)"$/) do |arg1, arg2|
   fill_in arg1, with: arg2
 end
 
-
+Entao(/^sou redirecionado para pagina com o filtro$/) do
+  visit "/animals"
+end
