@@ -12,7 +12,10 @@ Entao(/^vejo o texto "(.*?)"$/) do |arg1|
 	assert page.has_text?("Pets Available")
 end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 616c18e30abe6255a29beb7b6f19836ba0e04401
 #cadastro animal
 
 
@@ -53,4 +56,8 @@ end
 
 Entao(/^vejo o perfil do animal$/) do
   pending # express the regexp above with the code you wish you had
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 616c18e30abe6255a29beb7b6f19836ba0e04401

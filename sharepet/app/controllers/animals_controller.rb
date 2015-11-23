@@ -51,6 +51,7 @@ class AnimalsController < ApplicationController
   # POST /animals.json
   def create
     @animal = Animal.new(params[:animal])
+    @animal.donor = current_user.username
 
     respond_to do |format|
       if @animal.save
