@@ -12,7 +12,7 @@ Entao(/^vejo o texto "(.*?)"$/) do |arg1|
 	assert page.has_text?(arg1)
 end
 
-Entao(/^eu preencho em "(.*?)" with "(.*?)"$/) do |arg1, arg2|
+Entao(/^eu preencho em "(.*?)" com "(.*?)"$/) do |arg1, arg2|
     fill_in arg1, with: arg2
 end
 
