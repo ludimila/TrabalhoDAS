@@ -15,7 +15,13 @@
           <%= f.label :password %>
           <%= f.password_field :password, class: 'form-control' %>
 
+          
           <%= f.submit "Log in", class: "btn btn-primary" %>
+          <br>
+          <%= link_to(image_tag("sign-in-with-twitter.png", class: 'image-responsive'), "auth/twitter", style:"margin-top:15px",  :method => :get) %>
+          
+
+
         <% end %>
 
         <p>New user? <%= link_to "Sign up now!", signup_path %></p>

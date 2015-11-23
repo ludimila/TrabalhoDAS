@@ -29,46 +29,59 @@
 
         </div>
           <div class="card-action row">        
-            <%= @user.username %>
+            <%= "Hey, " + @user.name %>
           </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4"><%= @user.name %><i class="material-icons right">close</i></span>
+          <span class="card-title grey-text text-darken-4"><%= @user.name.capitalize %><i class="material-icons right">close</i></span>
           <p>
-            <b>Username:</b>
-            <%= @user.username %>
+            <% if !@user.username.nil? %>
+              <p>
+                <b>Username:</b>
+                <%=@user.username %>
+              </p>
+            <% end %>
+
+            <% if !@user.name.nil? %>
+              <p>
+                <b>Name:</b>
+                <%=@user.name.capitalize %>
+              </p>
+            <% end %>
           </p>
 
-          <p>
-            <b>Name:</b>
-            <%= @user.name %>
-          </p>
+          <% if !@user.email.nil? %>
+              <p>
+                <b>Email:</b>
+                <%=@user.email %>
+              </p>
+            <% end %>
 
-          <p>
-            <b>Email:</b>
-            <%= @user.email %>
-          </p>
+          <% if !@user.phone_number.nil? %>
+              <p>
+                <b>Phone Number:</b>
+                <%=@user.phone_number %>
+              </p>
+            <% end %>
 
-          <p>
-            <b>Phone number:</b>
-            <%= @user.phone_number %>
-          </p>
+          <% if !@user.zip_code.nil? %>
+              <p>
+                <b>Zip Code:</b>
+                <%=@user.zip_code %>
+              </p>
+            <% end %>
 
-          <p>
-            <b>Zip code:</b>
-            <%= @user.zip_code %>
-          </p>
-
-          <p>
-            <b>Address:</b>
-            <%= @user.address %>
-          </p>
+          <% if !@user.address.nil? %>
+              <p>
+                <b>Address:</b>
+                <%=@user.address %>
+              </p>
+            <% end %>
         </div>
       </div>
-
     </div>
 
 
     <!-- <%= link_to 'Edit', edit_user_path(@user), :class=>"btn waves-effect waves-orange" %> | -->
-    <%= link_to 'Back', root_path, :class=>"btn waves-effect waves-orange red" %>
+    <%= link_to 'Back', root_path, :class=>"btn btn-back waves-effect waves-orange red" %>
   </div>
 </body>
