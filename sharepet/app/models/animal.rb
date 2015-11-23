@@ -4,4 +4,5 @@ class Animal < ActiveRecord::Base
   mount_uploader :attachment, AttachmentUploader # Tells rails to use this uploader
   scope :by_breed, -> breed { where( "lower(animals.breed) like lower(?)", "%#{breed}%") }
   scope :only_available, -> { where(adopted: false) }
+
 end
