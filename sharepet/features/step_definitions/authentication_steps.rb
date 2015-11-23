@@ -9,7 +9,15 @@ Quando(/^eu clico no link "(.*?)"$/) do |arg1|
 end
 
 Entao(/^vejo o texto "(.*?)"$/) do |arg1|
-	assert page.has_text?("Pets Available")
+	assert page.has_text?(arg1)
+end
+
+Entao(/^eu preencho em "(.*?)" with "(.*?)"$/) do |arg1, arg2|
+    fill_in arg1, with: arg2
+end
+
+Entao(/^vejo a mensagem "(.*?)"$/) do |arg1|
+   page.has_link?(arg1)
 end
 
 #cadastro animal
@@ -52,14 +60,14 @@ Entao(/^vejo o perfil do animal$/) do
 end
 
 
-Dado(/^que eu estou na pagina do formulario de cadastro$/) do
-    visit "animals/new"
-end
+# Dado(/^que eu estou na pagina do formulario de cadastro$/) do
+#     visit "animals/new"
+# end
 
-Dado(/^clico no botao "(.*?)"$/) do |arg1|
-    click_button arg1
-end
+# Dado(/^clico no botao "(.*?)"$/) do |arg1|
+#     click_button arg1
+# end
 
-Entao(/^sou redirecionado para a pagina "(.*?)"$/) do |arg1|
-    visit arg1
-end
+# Entao(/^sou redirecionado para a pagina "(.*?)"$/) do |arg1|
+#     visit arg1
+# end
