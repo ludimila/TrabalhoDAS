@@ -9,7 +9,15 @@ Quando(/^eu clico no link "(.*?)"$/) do |arg1|
 end
 
 Entao(/^vejo o texto "(.*?)"$/) do |arg1|
-	assert page.has_text?("Pets Available")
+	assert page.has_text?(arg1)
+end
+
+Entao(/^eu preencho em "(.*?)" with "(.*?)"$/) do |arg1, arg2|
+    fill_in arg1, with: arg2
+end
+
+Entao(/^vejo a mensagem "(.*?)"$/) do |arg1|
+   page.has_link?(arg1)
 end
 
 #cadastro animal
@@ -49,8 +57,4 @@ end
 
 Entao(/^vejo o perfil do animal$/) do
   pending # express the regexp above with the code you wish you had
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> 616c18e30abe6255a29beb7b6f19836ba0e04401
