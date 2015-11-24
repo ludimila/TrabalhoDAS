@@ -30,25 +30,26 @@
       <a href="/" class="brand-logo center">Share Pet</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-          <a href='/animals/new'id="download-button" class="btn waves-effect waves-orange red">Share a pet!</a>
-          <a href='/animals/'id="download-button" class="btn waves-effect waves-orange red">Find a pet!</a>
           <% if logged_in? %>
             <li><%= link_to "Welcome, " + @current_user.name.capitalize, user_path(@current_user) %></li>
+            <a href='/animals/new'id="download-button" class="btn waves-effect waves-orange red">Share a pet!</a>
+            <a href='/animals/'id="download-button" class="btn waves-effect waves-orange red">Find a pet!</a>
             <%= link_to "Log out", logout_path, method: :delete, :class=>"btn waves-effect waves-orange red" %>
             <% else %>
             <a href='/login'id="download-button" class="btn waves-effect waves-orange red">Login</a>
           <% end %>
         </div>
       </ul>
-      <ul class="side-nav" id="mobile-demo">
+      <!-- <ul class="side-nav" id="mobile-demo">
         <% if logged_in? %>
           <li><%= link_to "Welcome, " + @current_user.name %></li>
+          <li><a href="/animals/">Find a pet!</a></li>
+          <li><a href="/animals/new">Share a pet!</a></li> 
           <li><a href="/login/" id="one"><%= link_to "Log out", logout_path, method: :delete %></a></li>
         <% else %>
           <li><a href="/login/" id="two">Login</a></li>
         <% end %>
-        <li><a href="/animals/">Find a pet!</a></li>
-        <li><a href="/animals/new">Share a pet!</a></li> 
+        </ul> -->
     </div>
   </nav>
 

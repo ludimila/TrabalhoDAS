@@ -12,11 +12,13 @@ Sharepet::Application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  match "/animals/:id" => "animals#add_interested_user", :as => :interested
+
   resources :users
 
   get "welcome/index"
 
-  resources :animals
+  resources :animals, path: :animal
 
 
   # The priority is based upon order of creation:

@@ -6,15 +6,17 @@ class AnimalsController < ApplicationController
   has_scope :only_available, :type => :boolean, allow_blank: false
   # GET /animals
   # GET /animals.json
+
   def index(filter=nil)
     @animals = Animal.all.sort_by{|e| e[:name]}
 
     @filtered = apply_scopes(Animal).all.sort_by{|e| e[:name]}
     @available = @filtered.find_all { |animal| animal.adopted == true }
   
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @filtered }
+   if params[:search].present?
+        @animals = Animal.near(params[:search], 50, :order => :distance)
+    else
+        @animals = Animal.all
     end
   end
 
@@ -56,11 +58,18 @@ class AnimalsController < ApplicationController
   # POST /animals.json
   def create
     @animal = Animal.new(params[:animal])
+    if current_user
+      @animal.donor = current_user.username
+    end
 
     respond_to do |format|
       if @animal.save
         # Tell the ReportMailer to send a report email after save
-        # ReportMailer.sharingPetMail(@animal).deliver
+        if current_user
+          if current_user.email
+            ReportMailer.sharingPetMail(@animal).deliver
+          end
+        end
         format.html { redirect_to @animal, notice: 'Pet was successfully created.' }
         
         format.json { render json: @animal, status: :created, location: @animal }
@@ -96,6 +105,21 @@ class AnimalsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to animals_url }
       format.json { head :no_content }
+    end
+  end
+
+  def add_interested_user
+    @animal = Animal.find(params[:id])
+    @animal.interested = current_user.username
+
+    respond_to do |format|
+      if @animal.update_attributes(params[:animal])
+        format.html { redirect_to @animal}
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @animal.errors, status: :unprocessable_entity }
+      end
     end
   end
 

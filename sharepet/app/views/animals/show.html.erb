@@ -52,8 +52,15 @@
       <b>Age: </b>
       <%= @animal.age %>
     </p>
+    <p>
+      <b>Address: </b>
+      <%= @animal.address %>
+    </p>
+  </div>
   </div>
 </div>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@animal.latitude}%2C#{@animal.longitude}" %>
 
   <div >
     <a href='/animals/' class="btn waves-effect waves-orange red" >Back</a>
