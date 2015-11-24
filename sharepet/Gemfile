@@ -40,6 +40,8 @@ group :test , :autotest do
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
   gem 'capybara'
+  # gem 'selenium'
+  gem 'capybara-mechanize'
   gem 'launchy'
   gem 'simplecov'
   gem 'ruby-prof'
