@@ -24,7 +24,6 @@ script:
   - rake test
   - rake test:benchmark
   - rake test:profile
-  - rake spec
   - cucumber features
 
 cache: bundler
