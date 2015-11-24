@@ -3,6 +3,7 @@ class AnimalsController < ApplicationController
   helper  SmartListing::Helper
 
   has_scope :by_breed
+  has_scope :by_address
   has_scope :only_available, :type => :boolean, allow_blank: false
   # GET /animals
   # GET /animals.json

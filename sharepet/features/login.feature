@@ -17,7 +17,7 @@ Funcionalidade: Fazer login
 	Dado que eu estou na homepage
     	Quando eu clico no link "Login"
     	Entao vejo o texto "Log in" 
-    	E eu preencho em "Username" with "user"
-		E eu preencho em "Password" with "user123"
+    	E eu preencho em "Username" com "user"
+		E eu preencho em "Password" com "user123"
 		E clico no botao "Log in"
 		Entao vejo a mensagem "Welcome, System user"

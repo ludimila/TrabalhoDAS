@@ -35,13 +35,17 @@ gem 'carrierwave'
 group :test , :autotest do
   gem "minitest", "~> 4.0"
   gem 'shoulda-matchers'
+  gem 'cucumber'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
   gem 'capybara'
+  # gem 'selenium'
+  gem 'capybara-mechanize'
   gem 'launchy'
   gem 'simplecov'
   gem 'ruby-prof'
+  gem 'warden'
 end
 
 group :development, :test do
