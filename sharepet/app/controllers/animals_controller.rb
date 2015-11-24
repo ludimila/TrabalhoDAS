@@ -3,6 +3,7 @@ class AnimalsController < ApplicationController
   helper  SmartListing::Helper
 
   has_scope :by_breed
+  has_scope :by_address
   has_scope :only_available, :type => :boolean, allow_blank: false
   # GET /animals
   # GET /animals.json
@@ -20,11 +21,18 @@ class AnimalsController < ApplicationController
     end
   end
 
+  def tweet_animal
+    string = "Adote esse animal domestico: " + "http://0.0.0.0:3000/animals/"
+
+    current_user.tweet(string)
+    redirect_to "/animals"
+  end
+
+
   # GET /animals/1
   # GET /animals/1.json
   def show
     @animal = Animal.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @animal }
@@ -98,6 +106,21 @@ class AnimalsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to animals_url }
       format.json { head :no_content }
+    end
+  end
+
+  def add_interested_user
+    @animal = Animal.find(params[:id])
+    @animal.interested = current_user.username
+
+    respond_to do |format|
+      if @animal.update_attributes(params[:animal])
+        format.html { redirect_to @animal}
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @animal.errors, status: :unprocessable_entity }
+      end
     end
   end
 

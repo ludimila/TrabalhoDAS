@@ -12,6 +12,14 @@
                 <button class="btn-floating waves-effect waves-light" id="search_button" type="submit"onclick="Materialize.toast('Busca Realizada!', 8000)"><i class="small material-icons right">search</i>
                 </button> 
               </label>
+
+              <input placeholder="Busca por endereco" id="search_input" name="by_address" type="text" width="20%">
+              <label for="search"> 
+                <button class="btn-floating waves-effect waves-light" id="search_button" type="submit"onclick="Materialize.toast('Busca Realizada!', 8000)"><i class="small material-icons right">search</i>
+                </button> 
+              </label>
+
+
           </div>
             <form>
             <div class="switch right">
@@ -42,6 +50,10 @@
           [<%= animal.breed %>] <br>
           <div class = "right">
           </div>
+          Breed: <%= animal.breed %>
+          <br>
+          Adress: <%= animal.address %>
+          <br>
           Age: <%= animal.age %>
           <br>
           Donor: <%= animal.donor %>
@@ -49,7 +61,7 @@
         <% if animal.adopted %>
           <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
         <% else %>
-          <a href="#" id="" class="btn right waves-effect waves-orange teal lighten-1"> I'm Interested</a>
+          <%= link_to "I'm Interested", interested_path(animal.id), :class => "btn right waves-effect waves-orange teal lighten-1" %>
         <% end %>
       </li>
   <% end %>
