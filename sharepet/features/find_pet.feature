@@ -11,5 +11,5 @@ Funcionalidade: Ver pets doados
 	Dado que eu sou doador
 	E eu estou logado
 	E que eu estou na homepage
-	E eu clico no link "Find a pet"
+	E eu seleciono o link "Find a pet!"
 	Entao vejo o texto "Pets Available" 

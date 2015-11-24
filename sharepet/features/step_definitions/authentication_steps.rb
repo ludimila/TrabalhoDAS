@@ -5,7 +5,7 @@ Dado(/^que eu estou na homepage$/) do
 end
 
 Quando(/^eu clico no link "(.*?)"$/) do |arg1|
- 	find(arg1).click_button
+ 	click_link arg1
 end
 
 Entao(/^vejo o texto "(.*?)"$/) do |arg1|
@@ -72,6 +72,13 @@ E(/^eu clico no botao "(.*?)"$/) do |arg1|
   click_button(arg1)
 end
 
+E(/^eu seleciono o link "(.*?)"$/) do |arg1|
+  Capybara.current_driver = :mechanize
+  page.has_link?(arg1)
+  pending # express the regexp above with the code you wish you had
+  # click_link(arg1)
+end
+
 #filtro
 
 Dado(/^que eu estou na pagina de animais$/) do
@@ -84,4 +91,10 @@ end
 
 Entao(/^sou redirecionado para pagina com o filtro$/) do
   visit "/animals"
+end
+
+Entao(/^sou redirecionado para o endereco do chat$/) do
+  Capybara.current_driver = :mechanize
+  page.has_link?("Chat")
+  visit 'https://gitter.im/ludimila/TrabalhoDAS'
 end
