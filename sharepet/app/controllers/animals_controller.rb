@@ -60,7 +60,7 @@ class AnimalsController < ApplicationController
         # Tell the ReportMailer to send a report email after save
         if current_user
           if current_user.email
-            ReportMailer.sharingPetMail(@animal).deliver
+            UserMailer.sharingPetMail(@animal,current_user.email).deliver
           end
         end
         format.html { redirect_to @animal, notice: 'Pet was successfully created.' }
