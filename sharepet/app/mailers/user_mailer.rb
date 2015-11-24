@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
   def sharingPetMail(animal, email)
   	@animal = animal
   	if mail
-  		mail(:to=> email, :subject => "Your pet has been shared!")
+  		mail(:to=> email, :subject => "Your pet has been posted!")
   	end
   end
 
