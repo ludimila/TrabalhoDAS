@@ -18,10 +18,10 @@ class AnimalsController < ApplicationController
     end
   end
 
-    def tweet_animal
-    # @animal = Animal.find(params[:id])
-    string = "Adote esse animal domestico: " + "http://0.0.0.0:3000/animals/" + @animal.to_s
-    tweet = current_user.tweet(string)
+  def tweet_animal
+    string = "Adote esse animal domestico: " + "http://0.0.0.0:3000/animals/"
+
+    current_user.tweet(string)
     redirect_to "/animals"
   end
 

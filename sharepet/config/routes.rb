@@ -1,6 +1,6 @@
 Sharepet::Application.routes.draw do
 
-  get '/auth/:provider/callback', to: 'sessions#createTwitter'
+  match '/auth/:provider/callback', to: 'sessions#createTwitter'
 
   get 'animals/twitter', to: 'animals#tweet_animal'
 
