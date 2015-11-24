@@ -60,8 +60,6 @@
         </p>
         <% if animal.adopted %>
           <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-        <% else %>
-          <%= link_to "I'm Interested", interested_path(animal.id), :class => "btn right waves-effect waves-orange teal lighten-1" %>
         <% end %>
       </li>
   <% end %>

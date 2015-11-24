@@ -110,18 +110,18 @@ class AnimalsController < ApplicationController
   end
 
   def add_interested_user
-    @animal = Animal.find(params[:id])
-    @animal.interested = current_user.username
+    # @animal = Animal.find(params[:id])
+    # @animal.interested = current_user.username
 
-    respond_to do |format|
-      if @animal.update_attributes(params[:animal])
-        format.html { redirect_to @animal}
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @animal.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @animal.update_attributes(params[:animal])
+    #     format.html { redirect_to @animal}
+    #     format.json { head :no_content }
+    #   else
+    #     format.html { render action: "edit" }
+    #     format.json { render json: @animal.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   private

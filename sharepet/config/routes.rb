@@ -12,7 +12,7 @@ Sharepet::Application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  match "/animals/:id" => "animals#add_interested_user", :as => :interested
+  match "/animals/:id" => "animals#new", :as => :interested
 
   resources :users
 
