@@ -1,40 +1,87 @@
-<p id="notice"><%= notice %></p>
+<body>
+    <div class="container">
 
-<p>
-  <b>Username:</b>
-  <%= @user.username %>
-</p>
+      <p id="notice"><%= notice %></p>
+      <!-- ----------- -->
+      <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red">
+          <i class="large material-icons">settings</i>
+        </a>
+        <ul>
+          <li><%= link_to @user, confirm: 'Are you sure?', disable_with: 'deleting...', method: :delete, class: 'btn-floating red' do %>
+            <i class="material-icons">delete</i>
+            <% end %>
+          </li>
+          <li><a class="btn-floating yellow darken-1"><i class="material-icons">location_on</i></a></li>
+          <li><a href="https://gitter.im/ludimila/TrabalhoDAS" class="btn-floating green"><i class="material-icons">forum</i></a></li>
+          <li><a href=<%= edit_user_path(@user) %> class="btn-floating blue"><i class="material-icons">mode_edit</i></a></li>
+        </ul>
+      </div>
+      <!-- ----------- -->
 
-<p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
+      <div class="card" width="40%">
+        <div class="card-image">
+          <% if @user.attachment? %>
+            <%= image_tag(@user.attachment.url, {:class=>"activator"}) if @user.attachment? %>
+          <% else %>
+            <img src="/assets/user1.png" alt="" class="activator">
+          <% end %>
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
+        </div>
+          <div class="card-action row">        
+            <%= "Hey, " + @user.name %>
+          </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%= @user.name.capitalize %><i class="material-icons right">close</i></span>
+          <p>
+            <% if !@user.username.nil? %>
+              <p>
+                <b>Username:</b>
+                <%=@user.username %>
+              </p>
+            <% end %>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
+            <% if !@user.name.nil? %>
+              <p>
+                <b>Name:</b>
+                <%=@user.name.capitalize %>
+              </p>
+            <% end %>
+          </p>
 
-<p>
-  <b>Phone number:</b>
-  <%= @user.phone_number %>
-</p>
+          <% if !@user.email.nil? %>
+              <p>
+                <b>Email:</b>
+                <%=@user.email %>
+              </p>
+            <% end %>
 
-<p>
-  <b>Zip code:</b>
-  <%= @user.zip_code %>
-</p>
+          <% if !@user.phone_number.nil? %>
+              <p>
+                <b>Phone Number:</b>
+                <%=@user.phone_number %>
+              </p>
+            <% end %>
 
-<p>
-  <b>Address:</b>
-  <%= @user.address %>
-</p>
+          <% if !@user.zip_code.nil? %>
+              <p>
+                <b>Zip Code:</b>
+                <%=@user.zip_code %>
+              </p>
+            <% end %>
+
+          <% if !@user.address.nil? %>
+              <p>
+                <b>Address:</b>
+                <%=@user.address %>
+              </p>
+            <% end %>
+        </div>
+      </div>
+    </div>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <!-- <%= link_to 'Edit', edit_user_path(@user), :class=>"btn waves-effect waves-orange" %> | -->
+    <%= link_to 'Back', root_path, :class=>"btn btn-back waves-effect waves-orange red" %>
+  </div>
+</body>

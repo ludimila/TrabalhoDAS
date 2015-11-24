@@ -12,6 +12,7 @@ gem 'bcrypt', '3.1.7'
 
 gem "paperclip", "~> 3.0"
 gem "cocaine", "= 0.5.7" 
+gem 'geocoder'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -34,15 +35,18 @@ gem 'carrierwave'
 group :test , :autotest do
   gem "minitest", "~> 4.0"
   gem 'shoulda-matchers'
+  gem 'cucumber'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
   gem 'capybara'
+  # gem 'selenium'
+  gem 'capybara-mechanize'
   gem 'launchy'
   gem 'simplecov'
   gem 'ruby-prof'
+  gem 'warden'
 end
-
 
 group :development, :test do
   gem "smart_listing"
@@ -59,6 +63,11 @@ group :development do
 end
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+gem 'omniauth-twitter', '~> 1.1.0'
+
+gem 'twitter', '~> 5.13.0'
+
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

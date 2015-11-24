@@ -1,12 +1,24 @@
 Sharepet::Application.routes.draw do
+
+  match '/auth/:provider/callback', to: 'sessions#createTwitter'
+
+  get 'animals/twitter', to: 'animals#tweet_animal'
+
   get "users/new"
+  get "sessions/new"
+
+  get 'signup' => 'users#new'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+
+  match "/animals/:id" => "animals#new", :as => :interested
 
   resources :users
 
-
   get "welcome/index"
 
-  resources :animals
+  resources :animals, path: :animal
 
 
   # The priority is based upon order of creation:

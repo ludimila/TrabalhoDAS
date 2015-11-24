@@ -17,10 +17,6 @@ class AnimalsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:filtered)
   end
 
-  test "should route to animals" do
-    assert_routing '/animals/1', { controller: "animals", action: "show", id: "1" }
-  end
-
   test "should get new" do
     get :new
     assert_response :success

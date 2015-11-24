@@ -1,0 +1,31 @@
+<body>
+  <div class="container">
+    <% provide(:title, "Log in") %>
+    <h1>Log in</h1>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_for(:session, url: login_path) do |f| %>
+
+          <%= f.label :username %>
+          <%= f.text_field :username, class: 'form-control' %>
+
+          <br>
+
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+
+          
+          <%= f.submit "Log in", class: "btn btn-primary" %>
+          <br>
+          <%= link_to(image_tag("sign-in-with-twitter.png", class: 'image-responsive'), "auth/twitter", style:"margin-top:15px",  :method => :get) %>
+          
+
+
+        <% end %>
+
+        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+      </div>
+    </div>
+  </div>
+</body>
